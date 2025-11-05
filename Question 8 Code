@@ -1,0 +1,32 @@
+// Question 8 Code
+public class CatCollection
+{
+  public static void main(String[] args)
+  {
+    Cat[] cats = {
+      new Cat("Fluffy"),
+      new Cat("Freckles"),
+      new Cat("Boots")
+    };
+
+    System.out.println("Before name change:");
+    for (Cat c : cats)
+    {
+      System.out.println(c);  // prints reference (e.g., Cat@15db9742)
+    }
+
+    for (Cat c : cats)
+    {
+      if (c.getName().equals("Boots"))
+      {
+        c.setName("Kitty");  // modify the object, not the reference
+      }
+    }
+
+    System.out.println("\nAfter name change:");
+    for (Cat c : cats)
+    {
+      System.out.println(c);  // same references as before
+    }
+  }
+}
