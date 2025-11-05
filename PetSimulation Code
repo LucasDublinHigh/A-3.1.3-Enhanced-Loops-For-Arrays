@@ -1,0 +1,102 @@
+public class PetSimulator
+{
+  public static void main(String[] args)
+  {
+    // Create an array that can hold up to 10 pets
+    Pet[] pets = new Pet[10];
+
+    // Adopt (create and name) four pets: two cats, two dogs
+    pets[0] = new Pet("Whiskers", Pet.CAT);
+    pets[1] = new Pet("Shadow", Pet.CAT);
+    pets[2] = new Pet("Buddy", Pet.DOG);
+    pets[3] = new Pet("Rex", Pet.DOG);
+
+    // First things first, feed your pets
+    for (Pet p : pets)
+    {
+      if (p != null)
+        p.feed();
+    }
+
+    // Make yourself the owner of all of your new pets
+    for (Pet p : pets)
+    {
+      if (p != null)
+        p.setOwner("Me");
+    }
+
+    // Your dogs make some noise, take them for a walk
+    for (Pet p : pets)
+    {
+      if (p != null && p.getType() == Pet.DOG)
+      {
+        p.makeNoise();
+        p.walk();
+      }
+    }
+
+    // When you get back, your cats make some noise
+    for (Pet p : pets)
+    {
+      if (p != null && p.getType() == Pet.CAT)
+      {
+        p.makeNoise();
+      }
+    }
+
+    // Give all of your pets a treat
+    for (Pet p : pets)
+    {
+      if (p != null)
+        p.giveTreat();
+    }
+
+    // Groom your cats
+    for (Pet p : pets)
+    {
+      if (p != null && p.getType() == Pet.CAT)
+        p.groom();
+    }
+
+    // Grooming is done, play with all pets
+    for (Pet p : pets)
+    {
+      if (p != null)
+        p.play();
+    }
+
+    // Whew, that was tiring, all pets nap and get fed
+    for (Pet p : pets)
+    {
+      if (p != null)
+      {
+        p.sleep();
+        p.feed();
+      }
+    }
+
+    System.out.println("--- MY PETS ---");
+    // Show the state of all of your pets
+    for (Pet p : pets)
+    {
+      if (p != null)
+        System.out.println(p);
+    }
+
+    // You decide to get a couple of pets for your friend
+    pets[4] = new Pet("Mittens", Pet.CAT);
+    pets[5] = new Pet("Fido", Pet.DOG);
+
+    // Set the owner of the new pets to your friend's name
+    pets[4].setOwner("Alex");
+    pets[5].setOwner("Alex");
+
+    System.out.println("--- MY PETS ---");
+    // Show the state of all of your pets
+    for (Pet p : pets)
+    {
+      if (p != null)
+        System.out.println(p);
+    }
+  }
+}
