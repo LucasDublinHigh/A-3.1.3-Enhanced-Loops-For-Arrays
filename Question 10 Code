@@ -1,0 +1,57 @@
+// Code for Question 10
+// CatCollection.java
+public class CatCollection
+{
+  public static void main(String[] args)
+  {
+    Cat[] cats = {
+      new Cat("Fluffy"),
+      new Cat("Freckles"),
+      new Cat("Boots")
+    };
+
+    // All cats just had a birthday — they're now 2 years old!
+    for (Cat c : cats)
+    {
+      c.setAge(2);
+    }
+
+    // Confirm the update
+    for (Cat c : cats)
+    {
+      System.out.println(c.getName() + " is " + c.getAge() + " years old.");
+    }
+  }
+}
+// Cat.java
+public class Cat
+{
+  private String name;
+  private int age;
+
+  public Cat(String name)
+  {
+    this.name = name;
+    this.age = 0; // default age
+  }
+
+  public String getName()
+  {
+    return name;
+  }
+
+  public void setName(String name)
+  {
+    this.name = name;
+  }
+
+  public int getAge()
+  {
+    return age;
+  }
+
+  public void setAge(int age)
+  {
+    this.age = age;
+  }
+}
